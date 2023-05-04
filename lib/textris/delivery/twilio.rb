@@ -17,6 +17,10 @@ module Textris
           options[:media_url] = message.media_urls
         end
 
+        if message.shorten_urls
+          options[:shorten_urls] = message.shorten_urls
+        end
+
         client.messages.create(**options)
       end
 
